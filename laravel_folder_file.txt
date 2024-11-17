@@ -1,0 +1,8 @@
+-> model folder -> database / sql Queries
+-> controller folder -> business logic files
+-> view folder -> html files
+-> routing folder -> url defining files
+-> assets folder -> img / fonnts / music / videos / css /js files
+
+-> config -> to do setup type database queue
+-> vendors -> all the package install

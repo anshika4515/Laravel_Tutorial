@@ -53,3 +53,9 @@ Composer -> dependency manager of php
 
 *per - project installation* -> with which i create this project
 composer create-project --prefer-dist laravel/laravel laravel-tut
+
+Run laravel project
+-> php artisan serve
+
+
+Ctrl+P -> to find the file in vs code

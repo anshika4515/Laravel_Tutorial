@@ -1,0 +1,2 @@
+-> when we click on route -> above the website
+-> go to inspect -> go to network -> we will get all the info response and url all

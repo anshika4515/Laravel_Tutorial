@@ -1,0 +1,9 @@
+php artisan route:cache  Create a route cache file for faster route registration
+php artisan route:clear  Remove the route cache file
+php artisan route:list   List all registered routes
+
+-> give only the routes created by us
+php artisan route:list --except-vendor 
+
+-> give the routes related to only post etc.
+php artisan route:list --path=post
