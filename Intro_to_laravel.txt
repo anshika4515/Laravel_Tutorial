@@ -1,0 +1,55 @@
+*Laravel* -> Laravel is a free, open source and one of the more popular php
+web framework based on MVC architectural pattern
+
+Taylor Otwell in June 2011
+
+*Uses* -> Create web app
+    -> create API
+
+MVC -> separation of concerns , code organization
+-> M for Model -> Database (SQL Queries)
+-> V for View  -> User Interface (HTML)
+-> C for Controller -> Business Logic (Mediator between M and V)
+
+how MVC works here?
+User -> Rquest dega jo ki server se sidha jaegi Controller ke ps 
+     -> fir  model ke ps jaega
+    -> request  send krega model ko 
+     -> model response mai data bhejega controller ko
+    -> controller same data send krega view ko jo ache se design krke 
+    dikhage response mai
+
+
+
+Why MVC?
+-> organized code
+-> independent block
+-> easy to maintain
+-> easy to modify
+->code reusability
+-> platform independence
+->improved collabration
+
+Framework -> Programming framework are sets of pre-written code and libraries tht provide a foundation for developing
+software applications
+
+Benifits of Laravel
+-> open source
+-> elegant syntax
+-> MVC arch.
+-> data migration and ORM (object relation management)
+-> robust routing system
+-> command line interface (composer)
+-> powerful template engine(blade template)
+-> Authentication and authorization
+-> testing and debugging
+-> security
+-> scalability and performance (redis and memcached)
+-> robust ecosystem and community
+
+Composer -> dependency manager of php
+   -> install package , update any version package , framework etc.
+
+
+*per - project installation* -> with which i create this project
+composer create-project --prefer-dist laravel/laravel laravel-tut
