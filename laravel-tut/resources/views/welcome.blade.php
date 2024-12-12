@@ -8,7 +8,11 @@
  <p>THis is home page</p>
 @endsection
 <h1>Our first Page</h1>
-
+<!--add javascript file -->
+<!--can use with same name differnt time but we cant do this with section --> 
+@push('scripts')
+  <script src="/example.js"></script>
+@endpush
 <a href="/about">About Page</a>
 <!-- to use named routes -->
 <a href="{{route('mypost')}}">Post Page</a> 
@@ -42,3 +46,4 @@
 @section
 @yield
 @extend --}}
+

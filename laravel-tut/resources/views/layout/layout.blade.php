@@ -45,6 +45,8 @@
 <div class="content">
 <!--to add content according to us using section-->
    @yield('content')
+<!-- used to add javascript -->
+   @stack('scripts')
 </div>
 
 </body>

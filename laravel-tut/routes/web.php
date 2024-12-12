@@ -75,9 +75,9 @@ Route::prefix('page')->group(function(){
    });
 });
 
-Route::get('/test',function(){
-    return view('test');
-});
+// Route::get('/test',function(){
+//     return view('test');
+// });
 
 // if no page of that route is there
 Route::fallback(function(){
