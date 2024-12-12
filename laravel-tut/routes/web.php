@@ -75,7 +75,11 @@ Route::prefix('page')->group(function(){
    });
 });
 
+Route::get('/test',function(){
+    return view('test');
+});
+
 // if no page of that route is there
 Route::fallback(function(){
     return "<h1>NO file of this</h1>";
-});
+}); 
