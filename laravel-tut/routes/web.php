@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-
+use App\Http\Controllers\UserController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -79,7 +78,28 @@ Route::prefix('page')->group(function(){
 //     return view('test');
 // });
 
+//pass the value from route to view
+// Route::get('/users',function(){
+//     return view('users',["user"=>"Anshika" , "city"=>"Delhi"]);
+// });
+//we can do it like this also
+Route::get('/users',function(){
+    return view('users')->with('user',"Ashikaa")->with('city',"yng");
+});
 // if no page of that route is there
 Route::fallback(function(){
     return "<h1>NO file of this</h1>";
 }); 
+
+/// ---- for controller learn ---///
+// Route::get('/learn-controller',[UserController::class,'showUser']);
+// Route::get('/learn-controller1}',[UserController::class,'showHome'])->name('home');
+// Route::get('/learn-controller/{id}',[UserController::class,'showUser'])->name('users');
+// Route::get('/learn-controller/post',[UserController::class,'showPost'])->name('post');
+
+
+Route::controller(UserController::class)->group(function(){
+    Route::get('/learn-controller1}','showHome')->name('home');
+Route::get('/learn-controller/{id}','showUser')->name('users');
+Route::get('/learn-controller/post','showPost')->name('post');
+});
