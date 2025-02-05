@@ -1,0 +1,9 @@
+php artisan make:migration create_students_table
+php artian migrate
+php artisan migrate:status
+php artisan migrate:rollback
+php artisan migrate:rollback --step=3 -> last 3 commands for migartion will be remove
+php artisan migarte:rollback --batch=2 -> remove particular step within rollback
+php artisan migarte:reset ->make database empty
+php artisan make:model Task -m -> make both migration and model
+php artisan make:migration update_students_table --table=students  -> add column in existing table
