@@ -1,0 +1,3 @@
+php artisan make:factory StudentFactory
+php artisan make:factory StudentFactory --model=Student -> make both model and factory
+php artisan db:seed -> run factory seeder
