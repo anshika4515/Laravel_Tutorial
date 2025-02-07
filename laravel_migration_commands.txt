@@ -7,3 +7,7 @@ php artisan migarte:rollback --batch=2 -> remove particular step within rollback
 php artisan migarte:reset ->make database empty
 php artisan make:model Task -m -> make both migration and model
 php artisan make:migration update_students_table --table=students  -> add column in existing table
+php artisan make:seeder StudentSeeder -> make seeder file
+php artisan db:seed -> for seeding database
+php artisan db:seed --class=StudentSeeder -> for seeding particular file
+php artisan db:seed --force -> to run on production
