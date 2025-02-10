@@ -11,7 +11,8 @@ class FriendController extends Controller
 {
     public function showAll()
     {
-        $friendsData = DB::table('friends')->get();
+        //$friendsData = DB::table('friends')->Paginate(4);
+        $friendsData = DB::table('friends')->orderBy('id')->cursorPaginate(4);
         return view('friends.friend', ['data' => $friendsData]);
     }
     public function addFriend(Request $request)
@@ -48,3 +49,8 @@ class FriendController extends Controller
         }
     }
 }
+
+//Types of pagination
+// -> simplePaginate
+// -> Paginate
+// -> cursorPaginate

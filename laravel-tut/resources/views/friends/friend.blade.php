@@ -9,3 +9,7 @@
     <a href="" class="btn-btn-warning btn-sm">Updates</a>
 </h3>
 @endforeach
+<!-- for pagination -->
+<div>  
+    {{$data->links()}}  
+</div>
