@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FriendController;
 use App\Http\Controllers\Studentcontroller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -116,3 +117,9 @@ Route::get('updateUsers/{id}',[Studentcontroller::class,'updateUser']);
 Route::get('deleteUsers/{id}',[Studentcontroller::class,'deleteUser']);
 
 //dd() ->debug information
+Route::get('friends',[FriendController::class,'showAll']);
+Route::view('addfriends','friends.addfriend');
+Route::post('addFriend',[FriendController::class,'addFriend'])->name('addFriend');
+Route::view('updatefriends','friends.updatefriend');
+Route::get('updateFriend/{id}',[FriendController::class,'updateFriend'])->name('updateFriend');
+Route::post('updateFriendData/{id}',[FriendController::class,'updateFriendData'])->name('updateFriendData');

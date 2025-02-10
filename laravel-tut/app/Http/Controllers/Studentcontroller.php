@@ -46,3 +46,4 @@ class Studentcontroller extends Controller
 //whereIn
 //whereOr
 //upsert -> mainly used to update the existing record in database
+//csrf -> cross site request forgeries
