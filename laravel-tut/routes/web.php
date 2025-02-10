@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\Studentcontroller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Models\Student;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -103,3 +106,13 @@ Route::controller(UserController::class)->group(function(){
 Route::get('/learn-controller/{id}','showUser')->name('users');
 Route::get('/learn-controller/post','showPost')->name('post');
 });
+
+
+Route::get('showUsers',[Studentcontroller::class,'showStudents'])->name('home');
+
+Route::get('showUsers/{id}',[Studentcontroller::class,'showSingleUser']);
+Route::get('addUsers',[Studentcontroller::class,'addUser']);
+Route::get('updateUsers/{id}',[Studentcontroller::class,'updateUser']);
+Route::get('deleteUsers/{id}',[Studentcontroller::class,'deleteUser']);
+
+//dd() ->debug information
