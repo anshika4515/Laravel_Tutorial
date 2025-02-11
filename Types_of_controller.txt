@@ -1,0 +1,20 @@
+Basic Controller
+-> php artisan make:controller UserController
+
+Single Action Controller
+-> php artisan make:controller UserController --invokable
+
+Resource Controller -> used on for CRUD
+-> php artisan make:controller UserController --resource
+
+//give 7 methods by default
+index()
+create()
+store(Request $request)
+show(User $user)
+edit(User $user)
+update(Request $request , User $user)
+destroy(User $user)
+
+-> have to make only one route for resource controller
+Route::resource('users',UserController::class);
