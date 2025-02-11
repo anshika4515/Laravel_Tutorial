@@ -7,7 +7,7 @@ use Dotenv\Util\Str;
 use GrahamCampbell\ResultType\Success;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use App\Rules\Lowercase;
 class FriendController extends Controller
 {
     public function showAll()
@@ -87,6 +87,19 @@ class FriendController extends Controller
         return $friend;
 
     }
+    public function addFriendData(Request $request)
+    { 
+        \Log::info("huih");
+        $request->validate([
+            'username' => ['required',new Lowercase], //to apply customized rules
+            'age' => 'required|numeric',
+            'city' =>'required'
+        ]);
+        \Log::info($request);
+        return $request->all();
+    
+    }
+    
   
 }
 

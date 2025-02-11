@@ -119,7 +119,8 @@ Route::get('deleteUsers/{id}',[Studentcontroller::class,'deleteUser']);
 //dd() ->debug information
 Route::get('friends',[FriendController::class,'showAll']);
 Route::view('addfriends','friends.addfriend');
-Route::post('addFriend',[FriendController::class,'addFriend'])->name('addFriend');
+// Route::post('addFriend',[FriendController::class,'addFriend'])->name('addFriend');  //main route
+Route::post('addFriend',[FriendController::class,'addFriendData'])->name('addFriend');  //for checking customized rules 
 Route::view('updatefriends','friends.updatefriend');
 Route::get('updateFriend/{id}',[FriendController::class,'updateFriend'])->name('updateFriend');
 Route::post('updateFriendData/{id}',[FriendController::class,'updateFriendData'])->name('updateFriendData');
