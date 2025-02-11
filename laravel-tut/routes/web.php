@@ -123,3 +123,9 @@ Route::post('addFriend',[FriendController::class,'addFriend'])->name('addFriend'
 Route::view('updatefriends','friends.updatefriend');
 Route::get('updateFriend/{id}',[FriendController::class,'updateFriend'])->name('updateFriend');
 Route::post('updateFriendData/{id}',[FriendController::class,'updateFriendData'])->name('updateFriendData');
+
+Route::get('show',[FriendController::class,'show']);
+Route::get('insert',[FriendController::class,'insertData']);
+Route::get('update',[FriendController::class,'updateData']);
+Route::get('delete',[FriendController::class,'deleteData']);
+Route::get('selectRawData',[FriendController::class,'rawData']);

@@ -48,8 +48,38 @@ class FriendController extends Controller
             echo "<h1>NO</h1>";
         }
     }
+    //raw Queries on database
+    public function show(){   
+        $friendsData = DB::select("select * from friends where id=?",[1]);
+        $friendsData = DB::select("select * from friends where id=:id",['id'=>3]);  //name binding to avoid sql injection
+        return $friendsData;
+    }
+    public function insertData(){
+        $friends = DB::statement("drop table friends");   //the query that doesnt return anything so we use statement() here
+        $friendsData = DB::insert("insert into friends (name,age,city) values (?,?,?)",["anshikaaa",12,"gurgaon"]);
+        return $friendsData;
+    }
+    public function updateData(){
+        $friendsData = DB::update("update friends set name='kartikverma' where id=?",[3]);
+        return $friendsData;
+    }
+    public function deleteData(){
+        $friendsData = DB::update("delete from friends where id=?",[3]);
+        return $friendsData;
+    }
+    //raw method with query builder
+    public function rawData(){
+        $friend = DB::table('friends')
+                  ->selectRaw('name')
+                  ->whereRaw('age = 12')->get();
+        return $friend;
+
+    }
+  
 }
 
+
+//can also user DB::raw()  -> anywhere
 //Types of pagination
 // -> simplePaginate
 // -> Paginate
