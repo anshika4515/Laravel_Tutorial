@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FriendRequest;
 use Dotenv\Util\Str;
 use GrahamCampbell\ResultType\Success;
 use Illuminate\Http\Request;
@@ -15,8 +16,19 @@ class FriendController extends Controller
         $friendsData = DB::table('friends')->orderBy('id')->cursorPaginate(4);
         return view('friends.friend', ['data' => $friendsData]);
     }
-    public function addFriend(Request $request)
+    public function addFriend(FriendRequest $request)
     {
+        // $request->validate([
+        //     'username' => 'required',
+        //     'age' => 'required|numeric',
+        //     'city' =>'required'
+        // ],[
+        //     "username.required" => "put username",
+        //     "username.numeric" => "requried numeric"
+        // ]);
+        return $request->all();
+       // return $request->only(['name']); -> gives only name data
+       // return $request->execpt(['age']) -> gives all data except age
         $friendsData = DB::table('friends')
             ->insert([
                 'name' => $request->username,
