@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\FriendController;
+use App\Http\Controllers\HobbyController;
 use App\Http\Controllers\Studentcontroller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UsersController;
 use App\Models\Student;
 
 Route::get('/', function () {
@@ -130,3 +132,8 @@ Route::get('insert',[FriendController::class,'insertData']);
 Route::get('update',[FriendController::class,'updateData']);
 Route::get('delete',[FriendController::class,'deleteData']);
 Route::get('selectRawData',[FriendController::class,'rawData']);
+
+
+//resource routes
+Route::resource('users',UsersController::class);
+Route::resource('hobbys',HobbyController::class);

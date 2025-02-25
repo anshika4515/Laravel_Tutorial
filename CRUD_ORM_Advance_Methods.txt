@@ -1,0 +1,31 @@
+ --- For Read -----
+findorfail() ->  if exits give data else give 404 not found
+chunk() -> use of callback , number is assigned data is fetched number by number
+lazy() -> no use of callback , no use to assign number of data to be fetched -> it fetch data one by one -> slow thn chunk method
+cursor() -> fetch data from single table not from multiple tables
+chunkById() -> for multiple data updation -> dont affect memory much
+
+
+--- For Create ---
+firstOrCreate()
+UpdateOrCreate()
+
+ex-> 
+User::UpdateOrCreate(
+    ["name"=>"Ram" , "city"=>"Delhi"],   //find kargea record
+    [
+        "email"=> "ram@gmail.com",        //update karega 
+        "age" => 30
+    ]
+); => vrna pura create hojega
+
+
+-- intersting --
+Upsert() ->
+
+User::upsert([
+    usual record
+],
+["email"], -> used to find in the data
+["city"] -> columns that need to be updated
+);
