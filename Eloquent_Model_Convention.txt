@@ -1,0 +1,20 @@
+//rename the table -> in model do
+
+class Student extends model
+{
+    use HasFactory;
+    protected $table = "my_table"; //table name rename
+ 
+    protected $primaryKey = "student_id";  //column name rename
+
+    public $timestamps = false;  //to avoid created at and updated at in table
+
+    //chnge column name
+    const CREATED_AT = 'creation_date';
+    const UPDATED_AT = 'updation_date';
+
+    //to set defualt data in table
+    protected attributes = [
+        'city' => 'Goa',
+    ];
+}

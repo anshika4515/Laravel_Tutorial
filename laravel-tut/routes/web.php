@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\FriendController;
 use App\Http\Controllers\HobbyController;
 use App\Http\Controllers\Studentcontroller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UsersController;
+use App\Models\Customer;
 use App\Models\Student;
 
 Route::get('/', function () {
@@ -137,3 +140,7 @@ Route::get('selectRawData',[FriendController::class,'rawData']);
 //resource routes
 Route::resource('users',UsersController::class);
 Route::resource('hobbys',HobbyController::class);
+Route::resource('customer',CustomerController::class);
+Route::get('customersearch',[CustomerController::class,'useOfWithWhereHas']);
+Route::get('customersearchh',[CustomerController::class,'useOfWhereHas']);
+Route::get('contact',[ContactController::class,'show']);
