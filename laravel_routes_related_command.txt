@@ -7,3 +7,6 @@ php artisan route:list --except-vendor
 
 -> give the routes related to only post etc.
 php artisan route:list --path=post
+
+
+-> for hitting resource route you have to do something like this -> localhost:8200/test/create
