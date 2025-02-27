@@ -7,3 +7,10 @@ $user->saveQuietly();
 $user->deleteQuietly();
 $user->restoreQuietly();
 $user->forceDeleteQuietly();
+
+//define global Scopes
+php artisan make:scope UserScope
+ -> in this we will get a apply function 
+
+-> we can also remove scope on some particular part by using
+$users = User::withoutGlobalScope(UserScope::class)->get();
